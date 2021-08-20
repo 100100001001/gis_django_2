@@ -1,9 +1,10 @@
 <div style="text-align: center">
 
     <div class="header_logo">
-        <h1>272727</h1>
-
+        <h1>10270111190918</h1>
     </div>
+
+
     <div class="header_button">
         <span>
             <a href="{% url 'articleapp:list' %}">
@@ -15,6 +16,13 @@
                 Projects
             </a>
         </span>
+        {% if user.is_authenticated %}
+        <span>
+            <a href="{% url 'subscribeapp:list' %}">
+                Subscription
+            </a>
+        </span>
+        {% endif %}
         {% if not user.is_authenticated %}
         <span>
             <a href="{% url 'accountapp:login' %}">
@@ -27,20 +35,20 @@
             </a>
         </span>
         {% else %}
-        <span>
+        <sapn>
             <a href="{% url 'accountapp:detail' pk=user.pk %}">
                 MyPage
             </a>
-        </span>
-        <span>
+        </sapn>
+        <sapn>
             <a href="{% url 'accountapp:logout' %}">
                 Logout
             </a>
-        </span>
-
+        </sapn>
         {% endif %}
 
 
     </div>
+
 
 </div>
