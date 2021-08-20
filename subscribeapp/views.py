@@ -7,7 +7,7 @@ from django.utils.decorators import method_decorator
 from django.views.generic import RedirectView
 
 from projectapp.models import Project
-from subscribeapp.models import Subsciption
+from subscribeapp.models import Subscription
 
 
 @method_decorator(login_required, 'get')
@@ -17,13 +17,13 @@ class SubscriptionView(RedirectView):
         user = request.user
         project = Project.objects.get(pk=kwargs['project_pk'])
 
-        subsciption = Subsciption.objects.filter(user=user,
+        subscription = Subscription.objects.filter(user=user,
                                                  project=project)
 
-        if subsciption.exists():
-            subsciption.delete()
+        if subscription.exists():
+            subscription.delete()
         else:
-            Subsciption(user=user, project=project).save()
+            Subscription(user=user, project=project).save()
         return super().get(request, *args, **kwargs)
 
     def get_redirect_url(self, *args, **kwargs):

@@ -1,4 +1,4 @@
-"""djangoProject URL Configuration
+"""djangoProject2_0630 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -26,4 +26,5 @@ urlpatterns = [
     path('comments/', include('commentapp.urls')),
     path('projects/', include('projectapp.urls')),
     path('subscribe/', include('subscribeapp.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
