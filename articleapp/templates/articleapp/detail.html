@@ -11,12 +11,11 @@
                 <a href="{% url 'likeapp:article_like' article_pk=target_article.pk %}"
                    class="material-icons"
                    style="vertical-align: middle;
-                          font-size: 2rem;
-                          color: #FF375EFF">
+                          font-size: 1.4rem;
+                          color: #ff375e">
                     favorite
                 </a>
-                <span
-                   style="vertical-align: middle; font-size: 1.4rem;">
+                <span style="vertical-align: middle; font-size: 1.4rem">
                     {{ target_article.like }}
                 </span>
             </div>
@@ -49,7 +48,8 @@
         </div>
 
         <hr>
-        <div>
+
+        <div class="text-center my-4">
             {#      댓글 내용, 댓글 작성창      #}
             {% for comment in target_article.comment.all %}
                 <div class="comment_box">
@@ -79,6 +79,4 @@
             {% include 'commentapp/create.html' %}
         </div>
     </div>
-
-
 {% endblock %}
